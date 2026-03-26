@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Great+Vibes&family=Space+Grotesk:wght@300;400;700&family=Outfit:wght@300;400;700&family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-newspaper: "UnifrakturMaguntia", cursive;
+  --font-serif: "Playfair Display", serif;
+  --font-lora: "Lora", serif;
+  --font-elegant: "Cormorant Garamond", serif;
+  --font-floral: "Great Vibes", cursive;
+  --font-minimal: "Outfit", sans-serif;
+  --font-modern: "Space Grotesk", sans-serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+@theme {
+  --color-paper-50: #fbf9f6;
+  --color-paper-100: #f4efe6;
+  --color-paper-200: #e8dfcd;
+  --color-paper-300: #d8cbb1;
+  --color-paper-400: #c5b493;
+  --color-paper-500: #b59f77;
+  --color-paper-600: #a18a61;
+  --color-paper-700: #867150;
+  --color-paper-800: #6f5d44;
+  --color-paper-900: #5a4b38;
+
+  --color-ink-500: #2c2925;
+  --color-ink-900: #1a1815;
+  
+  --color-gold-50: #fbf9f2;
+  --color-gold-100: #f6eedb;
+  --color-gold-200: #ebdca9;
+  --color-gold-300: #dec673;
+  --color-gold-400: #d2b047;
+  --color-gold-500: #c6992d;
+  --color-gold-600: #a97922;
+  --color-gold-700: #885c1e;
+  --color-gold-800: #714b1f;
+  --color-gold-900: #5f401f;
+
+  --color-dark-50: #f4f6f8;
+  --color-dark-100: #e4e8ec;
+  --color-dark-800: #29313a;
+  --color-dark-900: #1b2127;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-dark-50);
+    color: var(--color-dark-900);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .bg-paper-texture {
+    background-image: url("/newspaper_texture.png");
+    background-repeat: repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  .bg-texture-kertas-putih {
+    background-image: url("/texture-kertas-putih.png");
+    background-repeat: repeat;
+    background-size: auto;
+  }
+
+  .border-airmail {
+    border: 12px solid transparent;
+    border-image: repeating-linear-gradient(
+      -45deg,
+      #ce303d 0,
+      #ce303d 10px,
+      #ffffff 10px,
+      #ffffff 20px,
+      #254b87 20px,
+      #254b87 30px,
+      #ffffff 30px,
+      #ffffff 40px
+    ) 12;
+  }
+  
+  .border-airmail-sm {
+    border: 6px solid transparent;
+    border-image: repeating-linear-gradient(
+      -45deg,
+      #ce303d 0,
+      #ce303d 6px,
+      #ffffff 6px,
+      #ffffff 12px,
+      #254b87 12px,
+      #254b87 18px,
+      #ffffff 18px,
+      #ffffff 24px
+    ) 6;
+  }
+
+  .drop-cap::first-letter {
+    font-family: var(--font-newspaper);
+    float: left;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-weight: normal;
+  }
+}
